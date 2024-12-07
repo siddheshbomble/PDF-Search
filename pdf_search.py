@@ -4,7 +4,8 @@ from transformers import pipeline
 # Load the pre-trained question-answering model
 qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
 
-pdf_path = r"/content/MyResume.pdf"  # Path
+pdf_path = r"/content/MyResume.pdf"  
+# Path 
 
 
 def extract_text_from_pdf(pdf_path):
@@ -17,6 +18,7 @@ def extract_text_from_pdf(pdf_path):
                 text += page.extract_text() or ""
     except Exception as e:
         print(f"An error occurred while reading the PDF: {e}")
+        print("hello")
     return text
 
 
